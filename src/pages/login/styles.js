@@ -67,16 +67,21 @@ export const EsqueciText  = styled.p`
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
-
     color: #E5E044;
 ` 
 
-export const CriarText =  styled.p`
+export const BotaoRedirecionarCriarConta = styled.button`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
-
+    cursor: pointer;
+    background-color: inherit;
+    border: none;
     color: #23DD7A;
+
+    &:hover {
+        text-decoration: underline;
+    }
 `
