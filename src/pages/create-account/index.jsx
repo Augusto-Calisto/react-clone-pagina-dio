@@ -15,7 +15,7 @@ import { api } from "../../services/api";
 const CreateAccount = () => {
     const navigate = useNavigate();
     
-    const { control, handleSubmit, formState: { errors } } = useForm({
+    const { control, handleSubmit, reset, formState: { errors } } = useForm({
         mode: 'onSubmit',
         defaultValues: {
             nome: '',
@@ -29,8 +29,13 @@ const CreateAccount = () => {
             const { status } = await api.post(`/webhook/user/create`, formData);
             
             if(status === 200) {
-                alert('OK');
-                navigate('/login');
+                alert("Usuário criado com sucesso. Aguarde alguns instantes para ser redirecionado");
+
+                setTimeout(() => {
+                    navigate('/login');
+                }, 3000);
+
+                reset();
             }
 
         } catch(e) {
